@@ -1,23 +1,28 @@
 # SyncWatch Fork - Vidhub Watch Party
 
 ## Status
-Forked from Semro/syncwatch (MIT). Targeting vidhub4.cc (and mirrors).
+Forked from Semro/syncwatch (MIT). Targeting vidhub4.cc (and mirrors). Relay can use the original SyncWatch service, a local/A-hosted relay, VPN/roaming access, or an optional HK VPS if CN domestic reachability requires it.
 
 ## Known findings
 - vidhub4.cc: working mirror. vidhub2.top / vidhub3.top / vidhub.tv have Cloudflare/redirect issues.
 - Video is inside a same-origin iframe (vidhub4.cc/yzmplayer/...), not top page.
 - Player: ArtPlayer 5.4.0, HLS stream, blob video URL.
 - SyncWatch content script has all_frames: true - iframe hook expected to work.
-- Original relay: server.syncwatch.space (Yandex Cloud Russia) - unreliable for CN domestic users.
+- Original relay: server.syncwatch.space (Yandex Cloud Russia) may work via VPN/roaming, but can be unreliable for true CN domestic users.`n- Self-hosted relay is optional: any reachable Node Socket.IO relay works, including computer A on LAN/VPN or an HK VPS for public cross-border use.
 
 ## Roadmap
 
 ### Phase 1 - Core (fork + relay)
-- [ ] P1.1 - Deploy self-hosted relay server (Socket.IO) on HK VPS (port 443, wss://)
-- [ ] P1.2 - Update relay server URL constant in extension to point to self-hosted relay
+- [ ] P1.1 - Decide relay mode: original SyncWatch relay, computer A-hosted relay over LAN/VPN, or optional HK VPS
+- [ ] P1.2 - Keep relay URL configurable; set fork default only if needed for chosen relay mode
 - [ ] P1.3 - Manual end-to-end test on vidhub4.cc from two browsers - confirm hook + sync
-- [ ] P1.4 - Test relay reachability from true CN domestic network (not SG roaming)
+- [ ] P1.4 - Test chosen relay reachability from intended networks (VPN/roaming acceptable; true CN domestic only if targeting no-VPN use)
 - [ ] P1.5 - Package and sideload extension for internal use
+
+### Relay mode options
+- Original relay: simplest path if both users can connect to server.syncwatch.space.
+- Computer A-hosted relay: run packages/syncwatch-server on computer A; browser A and browser B both set SyncWatch server URL to A's reachable relay address. Works best on same LAN or mesh VPN. Public internet requires firewall/router/NAT/TLS work.
+- HK VPS relay: optional reliability upgrade for no-VPN CN/SG use; use wss:// on port 443 when exposing publicly.
 
 ### Phase 2 - Stability
 - [ ] P2.1 - Handle vidhub mirror domain changes: fetch active domain from config endpoint or support domain pattern matching in manifest
