@@ -1,3 +1,7 @@
+---
+> **This is a fork of [Semro/syncwatch](https://github.com/Semro/syncwatch) targeting vidhub4.cc with a self-hosted relay server for cross-border CN/SG use.**
+> See [ROADMAP.md](./ROADMAP.md) for project status and [DEVNOTES.md](./DEVNOTES.md) for setup notes.
+---
 [![GitHub release](https://img.shields.io/github/v/release/semro/syncwatch.svg)](https://github.com/semro/syncwatch/releases/latest)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE.md)
 [![Telegram](https://img.shields.io/badge/telegram-syncwatch-blue.svg?logo=telegram&label=Telegram)](https://t.me/syncwatch)
