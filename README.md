@@ -1,5 +1,5 @@
 ---
-> **This is a fork of [Semro/syncwatch](https://github.com/Semro/syncwatch) targeting vidhub4.cc with a self-hosted relay server for cross-border CN/SG use.**
+> **This is a fork of [Semro/syncwatch](https://github.com/Semro/syncwatch) targeting vidhub4.cc with original, computer-hosted, or optional VPS relay modes for CN/SG use.**
 > See [ROADMAP.md](./ROADMAP.md) for project status and [DEVNOTES.md](./DEVNOTES.md) for setup notes.
 ---
 

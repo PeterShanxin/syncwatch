@@ -1,3 +1,5 @@
+import { targetVideoMatches } from './target-sites';
+
 const manifest = {
   '{{firefox}}.manifest_version': 2,
   '{{chrome}}.manifest_version': 3,
@@ -39,9 +41,9 @@ const manifest = {
     default_popup: 'popup.html',
   },
   '{{chrome}}.incognito': 'split',
-  '{{firefox}}.permissions': ['<all_urls>', 'tabs', 'storage', 'notifications'],
+  '{{firefox}}.permissions': [...targetVideoMatches, 'tabs', 'storage', 'notifications'],
   '{{chrome}}.permissions': ['tabs', 'storage', 'notifications'],
-  '{{chrome}}.host_permissions': ['<all_urls>'],
+  '{{chrome}}.host_permissions': targetVideoMatches,
   content_scripts: [
     {
       matches: ['https://www.netflix.com/*'],

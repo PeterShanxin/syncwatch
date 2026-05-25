@@ -1,8 +1,9 @@
 import { RuntimeMessage, RuntimeMessageName } from '@/types/types';
 import { RoomEvent } from 'syncwatch-types';
+import { targetVideoMatches } from '../target-sites';
 
 export default defineContentScript({
-  matches: ['<all_urls>'],
+  matches: targetVideoMatches,
   allFrames: true,
   runAt: 'document_end',
 
