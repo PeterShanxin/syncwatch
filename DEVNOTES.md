@@ -32,3 +32,9 @@
 - Chrome MV3 unpacked build: packages/syncwatch-extension/.output/chrome-mv3
 - Chrome zip package: packages/syncwatch-extension/.output/syncwatch-extension-1.1.0-chrome.zip
 - Local relay build: packages/syncwatch-server/build/index.js
+
+## Root app scripts
+- `npm run app:extension` - build the Chrome MV3 extension for sideloading
+- `npm run app:extension:dev` - run WXT extension dev mode
+- `npm run app:package` - build and zip the Chrome MV3 extension
+- `npm run app:relay` - run the optional relay server for computer A or VPS hosting

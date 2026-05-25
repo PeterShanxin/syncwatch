@@ -12,7 +12,11 @@
   ],
   "scripts": {
     "lint": "npx @biomejs/biome format --write .",
-    "compile": "tsc --build tsconfig.build.json"
+    "compile": "tsc --build tsconfig.build.json",
+    "app:extension": "npm run build -w syncwatch-extension",
+    "app:extension:dev": "npm run dev -w syncwatch-extension",
+    "app:package": "npm run zip -w syncwatch-extension",
+    "app:relay": "npm run start:dev -w syncwatch-server"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4"
